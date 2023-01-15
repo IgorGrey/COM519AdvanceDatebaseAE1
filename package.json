@@ -1,10 +1,12 @@
 {
   "name": "com519advancedatebaseae1",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Assesment work for AdvDb module, 2nd year Software engineering",
+  "main": "index.ejs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +19,15 @@
     "url": "https://github.com/IgorGrey/COM519AdvanceDatebaseAE1/issues"
   },
   "homepage": "https://github.com/IgorGrey/COM519AdvanceDatebaseAE1#readme",
-  "dependencies": {
-    "ejs": "^3.1.8",
-    "express": "^4.18.2"
-  },
   "devDependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.3",
+    "node": "^19.4.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
     "nodemon": "^2.0.20"
   }
 }
