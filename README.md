@@ -2,16 +2,15 @@
 
 CORE:
 - bare bones - DONE
-- connect DB
-- app.js, session, controllers, model,
-
-- filter data option
-
+- connect DB - DONE
+- session, 
+- controllers, 
+- model, schema - DONE (Not puling data - tested console.log() )
+- crud
 - design = bootstrap
-
+- filter data option
 - Write report in markdown language
 
 
 potential Extras:
-- loading-cli
-- - find a way to visualize data
+- - find a way to visualize data (maybe mongodb chart tools)
