@@ -3,10 +3,15 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
-const equipment_lossController = require("./controllers/Equipment_loss");
-const personnel_lossController = require("./controllers/Personnel_loss");
+const bodyParser = require("body-parser");
+
+const RLE = require("./models/Equipment_loss");
+const RLP = require("./models/Personnel_loss");
+const eq_loss_Controller = require("./controllers/eq_loss_crud");
+const per_loss_Controller = require("./controllers/per_loss_crud");
 
 const {PORT, MONGODB_URI} = process.env;
+const res = require("express/lib/response");
 
 mongoose.set('strictQuery', true);
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
@@ -19,21 +24,13 @@ mongoose.connection.on("error", (err) => {
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
-//add db controllers here -----------------------------
-
 app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/equipment_losses", async (req, res) => {
-  const equipment_losses = await equipment_lossController.find({})
-  res.render("equipment_losses");
-});
+app.get("/equipment_losses", eq_loss_Controller.list);
 
-app.get("/personnel_losses", async (req, res) => {
-  const personnel_losses = await personnel_lossController.find({})
-  res.render("personnel_losses");
-});
+app.get("/personnel_losses", per_loss_Controller.list);
 
 app.listen(PORT, () => {
   console.log(`App is listening at http://localhost:${PORT}`);
