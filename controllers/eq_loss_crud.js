@@ -23,6 +23,4 @@ exports.list = async (req, res) => {
   } catch (e) {
     res.status(404).send ({ message: "Could not find equipment "})
   }
-
-  
-}
+};

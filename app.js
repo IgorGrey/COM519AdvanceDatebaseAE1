@@ -13,16 +13,18 @@ const per_loss_Controller = require("./controllers/per_loss_crud");
 const {PORT, MONGODB_URI} = process.env;
 const res = require("express/lib/response");
 
-mongoose.set('strictQuery', true);
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+app.set("view engine", "ejs");
 
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.on("error", (err) => {
   console.error("----------------MongoDB conncection error--------------------");
   console.error(err);
   process.exit();
 })
-app.set("view engine", "ejs");
+
 app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
   res.render("index");

@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/IgorGrey/COM519AdvanceDatebaseAE1#readme",
   "devDependencies": {
+    "@types/express": "^4.17.15",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
