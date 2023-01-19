@@ -5,7 +5,7 @@ const personnel_lossSchema = new Schema({
     date: String,
     day: String,
     personnel: String,
-    "personnel*": String,
+    personnelA: String,
     POW: String
 }, 
     {timestamp: false}

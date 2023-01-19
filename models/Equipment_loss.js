@@ -2,23 +2,20 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const equipment_lossSchema = new Schema({
-
 date: String,
 day: String,
 aircraft: String,
 helicopter: String,
 tank: String,
 APC: String,
-"field artillery": String,
+field_artillery: String,
 MRL: String,
-"military auto": String,
-"fuel tank": String,
+military_auto: String,
+fuel_tank: String,
 drone: String,
-"naval ship": String,
-"anti-aircraft warfare": String
-
-}, 
-    
+naval_ship: String,
+anti_aircraft_warfare: String
+},     
 {timestamp: true}
 );
 
