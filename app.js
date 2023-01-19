@@ -11,7 +11,7 @@ const eq_loss_Controller = require("./controllers/eq_loss_crud");
 const per_loss_Controller = require("./controllers/per_loss_crud");
 
 const {PORT, MONGODB_URI} = process.env;
-const res = require("express/lib/response");
+//const res = require("express/lib/response");
 
 app.set("view engine", "ejs");
 
@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
 
 app.get("/equipment_losses", eq_loss_Controller.list);
 
-app.get("/personnel_losses", per_loss_Controller.list);
+//app.get("/personnel_losses", per_loss_Controller.list);
 
 app.listen(PORT, () => {
   console.log(`App is listening at http://localhost:${PORT}`);
