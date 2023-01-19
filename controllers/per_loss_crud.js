@@ -2,14 +2,14 @@ const bodyParser = require("body-parser");
 const Personnel_Loss = require("../models/Personnel_loss");
 
 exports.list = async (req, res) => {
-  const perPage = 8;
-  const limit = parseInt(req.query.limit) || 8; 
+  const perPage =12;
+  const limit = parseInt(req.query.limit) || 12; 
   const page = parseInt(req.query.page) || 1;
   const message = req.query.message;
 
   try {
     const Personnel_losses = await Personnel_Loss.find({}).skip((perPage * page) - perPage).limit(limit);
-    const count = await Personnel_loss.find({}).count();
+    const count = await Personnel_Loss.find({}).count();
     const numberOfPages = Math.ceil(count / perPage);
     
     res.render("personnel_losses", {
@@ -19,7 +19,7 @@ exports.list = async (req, res) => {
       message: message
     });
   } catch (e) {
-    res.status(404).send ({ message: "Could not find equipment "})
+    res.status(404).send ({ message: "Could not find personnel loss data "})
   }
 };
 

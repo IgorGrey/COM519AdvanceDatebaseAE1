@@ -2,11 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0", shrink-to-fit="no ">
+  <title>List</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/" />
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+  <link href="css/album.css" rel="stylesheet" />
+
 </head>
 <body>
-  <H1>RLE page</H1>
+  <H1>Russia equipment losses stats page</H1>
+
+  <%- include('common/header'); -%>
+    <div class="container">
+      <% if (message) { %>
+        <div class="row justify-content-md-center">
+          <div class="alert alert-primary" role="alert">
+            <%= message %>
+          </div>
+        </div>
+        <% } %>
+
+      </div>
+      <table class="table table-striped custab">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Aircraft</th>
+            <th>Helicopter</th>
+            <th>Tank</th>
+            <th>APC</th>
+            <th>Field Artillery</th>
+            <th>MRL</th>
+            <th>Military auto</th>
+            <th>Fuel tank</th>
+            <th>Drone</th>
+            <th>Naval ship</th>
+            <th>Anti-aircraft warfare</th>
+          </tr>
+
+          <% Equipment_losses.forEach(Equipment_loss=> { %>
+            <tr>
+              <td>
+                <%= Equipment_loss.date %>
+              </td>
+              <td>
+                <%= Equipment_loss.day %>
+              </td>
+              <td>
+                <%= Equipment_loss.aircraft %>
+              </td>
+              <td>
+                <%= Equipment_loss.tank %>
+              </td>
+              <td>
+                <%= Equipment_loss.APC %>
+              </td>
+              <td>
+                <%= Equipment_loss.field_artillery %>
+              </td>
+              <td>
+                <%= Equipment_loss.MRL %>
+              </td>
+              <td>
+                <%= Equipment_loss.military_auto %>
+              </td>
+              <td>
+                £<%= Equipment_loss.fuel_tank %>
+              </td>
+              <td>
+                <%= Equipment_loss.drone %>
+              </td>
+              <td>
+                <%= Equipment_loss.naval_ship %>
+              </td>
+              <td>
+                <%= Equipment_loss.anti_aircraft_warfare %>
+              </td>
+              <% }); %>
+              
+        </thead>
+      </table>
+    </div>
 </body>
 </html>

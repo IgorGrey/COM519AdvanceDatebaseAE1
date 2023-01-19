@@ -2,17 +2,16 @@ const Equipment_Loss = require('../models/Equipment_loss');
 const bodyParser = require("body-parser");
 
 exports.list = async (req, res) => {
-  const perPage = 8;
-  const limit = parseInt(req.query.limit) || 8; 
+  const perPage = 12;
+  const limit = parseInt(req.query.limit) || 12; 
   const page = parseInt(req.query.page) || 1;
   const message = req.query.message;
 
   try {
     const Equipment_losses = await Equipment_Loss.find({}).skip((perPage * page) - perPage).limit(limit);
-    const count = await Equipment_loss.find({}).count();
+    const count = await Equipment_Loss.find({}).count();
     const numberOfPages = Math.ceil(count / perPage);
-    console.log("_________All equipment should be listed below to test db conncection and model import___________") // remove this before submition
-    console.log(Equipment_losses); // remove this before submition
+    console.log
     
     res.render("equipment_losses", {
       Equipment_losses: Equipment_losses,
@@ -21,7 +20,7 @@ exports.list = async (req, res) => {
       message: message
     });
   } catch (e) {
-    res.status(404).send ({ message: "Could not find equipment "})
+    res.status(404).send ({ message: "Could not find equipment loss data"})
   }
 };
 

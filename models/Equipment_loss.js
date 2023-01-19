@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const equipment_lossSchema = new Schema({
+const equipment_lossSchema = new Schema({ 
 date: String,
 day: String,
 aircraft: String,
