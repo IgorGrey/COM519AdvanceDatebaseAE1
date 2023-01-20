@@ -35,7 +35,7 @@ exports.create = async (req, res) => {
     res.redirect('personnel_losses/?message=New entry to personnel losses has been recorded.');
   } catch (e){
     if (e.errors) {
-      res.render('create', { errors: e.errors })
+      res.render('create_p', { errors: e.errors })
       rerturn;
     }
     return res.status(400).send({
@@ -54,7 +54,7 @@ exports.edit = async (req, res) => {
     res.render('update', { result, result });
   } catch (e) {
     if (e.errors) {
-      res.render('personnel_losses', { errors: e.errors })
+      res.render('index', { errors: e.errors })
       return;
     }
     res.status(404).send({
@@ -71,7 +71,7 @@ exports.editView = async(req, res) => {
         personnelA: req.body.personnelA,
         POW: req.body.POW
     })
-    res.redirect("/personnel_losses");
+    res.redirect("/index");
   } catch (e) {
     res.status(404).send({
       message: `Update failed.`

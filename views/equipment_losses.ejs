@@ -84,7 +84,7 @@
                 <%= Equipment_loss.military_auto %>
               </td>
               <td>
-                £<%= Equipment_loss.fuel_tank %>
+                <%= Equipment_loss.fuel_tank %>
               </td>
               <td>
                 <%= Equipment_loss.drone %>
@@ -95,7 +95,9 @@
               <td>
                 <%= Equipment_loss.anti_aircraft_warfare %>
               </td>
-              <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+              <td class="text-center"><a class='btn btn-info btn-xs' href="/update_e/<%= Equipment_loss._id %>"><span class="glyphicon glyphicon-edit">
+              </span> Edit</a> <a href="/equipment_losses/delete/<%= Equipment_loss._id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove">
+              </span> Del</a></td>
               <% }); %>
               
               

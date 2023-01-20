@@ -43,7 +43,7 @@ exports.create = async (req, res) => {
     res.redirect('equipent_losses/?message=New entry to equipment losses has been recorded.');
   } catch (e){
     if (e.errors) {
-      res.render('create', { errors: e.errors })
+      res.render('create_e', { errors: e.errors })
       rerturn;
     }
     return res.status(400).send({

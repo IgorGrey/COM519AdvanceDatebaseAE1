@@ -29,8 +29,19 @@ app.get("/", (req, res) => {
 });
 
 app.get("/equipment_losses", eq_loss_Controller.list);
-
 app.get("/personnel_losses", per_loss_Controller.list);
+
+app.get("/create_p", (req,res) => {
+  res.render("create_p");
+});
+app.post("/create_p", per_loss_Controller.create);
+
+app.get("/equipment_losses/delete/:id", eq_loss_Controller.delete);
+app.get("/personnel_losses/delete/:id", per_loss_Controller.delete);
+
+app.get("")
+app.get("/update_p/:id", per_loss_Controller.edit);
+app.post("/update_p/:id", per_loss_Controller.editView);
 
 app.listen(PORT, () => {
   console.log(`App is listening at http://localhost:${PORT}`);

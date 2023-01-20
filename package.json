@@ -4,8 +4,9 @@
   "description": "Assesment work for AdvDb module, 2nd year Software engineering",
   "main": "index.ejs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
+    "seedProduction": "cross-env NODE_ENV=production node seeder.js",
+    "seed": "node seeder.js",
     "start": "node app.js"
   },
   "repository": {
