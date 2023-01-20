@@ -11,7 +11,6 @@ exports.list = async (req, res) => {
     const Equipment_losses = await Equipment_Loss.find({}).skip((perPage * page) - perPage).limit(limit);
     const count = await Equipment_Loss.find({}).count();
     const numberOfPages = Math.ceil(count / perPage);
-    console.log
     
     res.render("equipment_losses", {
       Equipment_losses: Equipment_losses,
